@@ -14,7 +14,6 @@ import MainMenu from "@/components/MainMenu.vue";
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem;
   font-weight: var(--regular);
 }
 </style>

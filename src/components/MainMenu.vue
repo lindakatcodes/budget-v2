@@ -12,6 +12,9 @@
           <router-link to="/dashboard" @click="toggleMenu()"
             >Dashboard</router-link
           >
+          <button @click="handleLogout()" class="menu-cta-button">
+            Logout
+          </button>
         </nav>
       </div>
     </transition>
@@ -19,12 +22,19 @@
 </template>
 
 <script setup lang="ts">
+import { useUserStore } from "@/stores/user";
 import { ref } from "vue";
 
+const store = useUserStore();
 const isOpen = ref(false);
 
 function toggleMenu() {
   isOpen.value = !isOpen.value;
+}
+
+async function handleLogout() {
+  store.signOut();
+  toggleMenu();
 }
 </script>
 

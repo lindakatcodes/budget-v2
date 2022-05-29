@@ -6,6 +6,7 @@
     </div>
     <transition name="slide">
       <div class="menu-target" v-show="isOpen">
+        <p v-if="props.userInfo">Hi {{ props.userInfo.name }}!</p>
         <nav>
           <router-link to="/" @click="toggleMenu()">Home</router-link>
           <router-link to="/history" @click="toggleMenu()">History</router-link>
@@ -22,9 +23,13 @@
 </template>
 
 <script setup lang="ts">
+import type { User } from "@/models/models";
 import { useUserStore } from "@/stores/user";
 import { ref } from "vue";
 
+const props = defineProps<{
+  userInfo: User;
+}>();
 const store = useUserStore();
 const isOpen = ref(false);
 

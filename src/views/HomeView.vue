@@ -1,10 +1,10 @@
 <template>
   <aside>
-    <MainMenu />
+    <MainMenu :userInfo="{ ...user }" />
   </aside>
   <main>
     <section v-if="isAuthenticated">
-      <h2>Welcome, {{ user.name }}!</h2>
+      <AccountPage :user="{ ...user }" />
     </section>
     <section v-else>
       <LoginForm />
@@ -17,6 +17,7 @@ import MainMenu from "@/components/MainMenu.vue";
 import { useUserStore } from "@/stores/user";
 import { storeToRefs } from "pinia";
 import LoginForm from "../components/LoginForm.vue";
+import AccountPage from "../components/AccountPage.vue";
 
 const store = useUserStore();
 let { isAuthenticated, user } = storeToRefs(store);

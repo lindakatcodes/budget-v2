@@ -9,7 +9,8 @@
     "test:e2e": "start-server-and-test preview http://127.0.0.1:5050/ 'cypress open'",
     "test:e2e:ci": "start-server-and-test preview http://127.0.0.1:5050/ 'cypress run'",
     "typecheck": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "genTypes": "npx openapi-typescript https://pzuxuxaymxsnbzakccor.supabase.co/rest/v1/?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB6dXh1eGF5bXhzbmJ6YWtjY29yIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTMyNzE3NzgsImV4cCI6MTk2ODg0Nzc3OH0.GDngTSiOgAut7XnqocbdSw8SfBf117m2-gkxVwYkWag --output types/supabase.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^1.35.3",

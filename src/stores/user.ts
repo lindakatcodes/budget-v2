@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { supabase } from "@/supabase";
-import type { User } from "@/models/user-model";
+import type { User } from "@/models/models";
 interface State {
   isAuthenticated: boolean;
   isLoading: boolean;

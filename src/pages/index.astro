@@ -1,16 +1,17 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <section>
+    <h1>Simple Budget Tracker</h1>
+    <p>Currently available: {currentAmount}</p>
+  </section>
+  <section>
+    <h2>Actions</h2>
+    <button type="button">Spend money</button>
+    <button type="button">Add money</button>
+    <button type="button">See transaction list</button>
+  </section>
+  <section></section>
+</BaseLayout>

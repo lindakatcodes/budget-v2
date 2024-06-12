@@ -1,17 +1,31 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  ClerkLayout,
+  SignedIn,
+  SignedOut,
+} from "astro-clerk-auth/components/control";
+import { SignIn } from "astro-clerk-auth/components/interactive";
 ---
 
-<BaseLayout>
-  <section>
-    <h1>Simple Budget Tracker</h1>
-    <p>Currently available: {currentAmount}</p>
-  </section>
-  <section>
-    <h2>Actions</h2>
-    <button type="button">Spend money</button>
-    <button type="button">Add money</button>
-    <button type="button">See transaction list</button>
-  </section>
-  <section></section>
-</BaseLayout>
+<ClerkLayout>
+  <BaseLayout>
+    <SignedOut>
+      <p>Sign in or create an account to view and make budgets.</p>
+      <SignIn />
+    </SignedOut>
+    <SignedIn>
+      <section>
+        <p>Currently available: 0</p>
+      </section>
+      <section>
+        <h2>Actions</h2>
+        <button type="button">Spend money</button>
+        <button type="button">Add money</button>
+        <button type="button">See transaction list</button>
+      </section>
+    </SignedIn>
+  </BaseLayout>
+</ClerkLayout>
+
+<style></style>

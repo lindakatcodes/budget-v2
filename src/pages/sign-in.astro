@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { ClerkLayout } from "astro-clerk-auth/components/control";
+import { SignIn as SignInComponent } from "astro-clerk-auth/components/interactive";
+---
+
+<ClerkLayout>
+  <BaseLayout>
+    <SignInComponent />
+  </BaseLayout>
+</ClerkLayout>

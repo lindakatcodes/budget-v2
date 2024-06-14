@@ -14,12 +14,12 @@ const isLoggedIn = await Astro.locals.currentUser();
   <BaseLayout>
     {
       !isLoggedIn ? (
-        <SignedOut>
+        <>
           <p>Sign in or create an account to view and make budgets.</p>
           <SignIn />
-        </SignedOut>
+        </>
       ) : (
-        <SignedIn>
+        <>
           <section>
             <p>Currently available: 0</p>
           </section>
@@ -29,7 +29,7 @@ const isLoggedIn = await Astro.locals.currentUser();
             <button type="button">Add money</button>
             <button type="button">See transaction list</button>
           </section>
-        </SignedIn>
+        </>
       )
     }
   </BaseLayout>

@@ -1,44 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import {
-  ClerkLayout,
-  SignedIn,
-  SignedOut,
-} from "astro-clerk-auth/components/control";
-import { SignIn } from "astro-clerk-auth/components/interactive";
-
-const isLoggedIn = await Astro.locals.currentUser();
 ---
 
-<ClerkLayout>
-  <BaseLayout>
-    {
-      !isLoggedIn ? (
-        <>
-          <p>Sign in or create an account to view and make budgets.</p>
-          <SignIn />
-        </>
-      ) : (
-        <>
-          <section>
-            <p>Currently available: 0</p>
-          </section>
-          <section>
-            <h2>Actions</h2>
-            <button type="button">Spend money</button>
-            <button type="button">Add money</button>
-            <button type="button">See transaction list</button>
-          </section>
-        </>
-      )
-    }
-  </BaseLayout>
-</ClerkLayout>
+<BaseLayout>
+  <section>
+    <p>Currently available: 0</p>
+  </section>
+  <section>
+    <h2>Actions</h2>
+    <button type="button">Spend money</button>
+    <button type="button">Add money</button>
+    <button type="button">See transaction list</button>
+  </section>
+</BaseLayout>
 
 <style></style>
-
-<script>
-  window.onbeforeunload = () => {
-    debugger;
-  };
-</script>

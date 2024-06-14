@@ -6,6 +6,8 @@ import {
   SignedOut,
 } from "astro-clerk-auth/components/control";
 import { SignIn } from "astro-clerk-auth/components/interactive";
+
+const isLoggedIn = await Astro.locals.currentUser();
 ---
 
 <ClerkLayout>
@@ -29,3 +31,9 @@ import { SignIn } from "astro-clerk-auth/components/interactive";
 </ClerkLayout>
 
 <style></style>
+
+<script>
+  window.onbeforeunload = () => {
+    debugger;
+  };
+</script>

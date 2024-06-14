@@ -12,21 +12,26 @@ const isLoggedIn = await Astro.locals.currentUser();
 
 <ClerkLayout>
   <BaseLayout>
-    <SignedOut>
-      <p>Sign in or create an account to view and make budgets.</p>
-      <SignIn />
-    </SignedOut>
-    <SignedIn>
-      <section>
-        <p>Currently available: 0</p>
-      </section>
-      <section>
-        <h2>Actions</h2>
-        <button type="button">Spend money</button>
-        <button type="button">Add money</button>
-        <button type="button">See transaction list</button>
-      </section>
-    </SignedIn>
+    {
+      !isLoggedIn ? (
+        <SignedOut>
+          <p>Sign in or create an account to view and make budgets.</p>
+          <SignIn />
+        </SignedOut>
+      ) : (
+        <SignedIn>
+          <section>
+            <p>Currently available: 0</p>
+          </section>
+          <section>
+            <h2>Actions</h2>
+            <button type="button">Spend money</button>
+            <button type="button">Add money</button>
+            <button type="button">See transaction list</button>
+          </section>
+        </SignedIn>
+      )
+    }
   </BaseLayout>
 </ClerkLayout>
 

@@ -1,0 +1,48 @@
+---
+import { UserButton } from "astro-clerk-auth/components/interactive";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Simple Budget</title>
+  </head>
+  <body>
+    <main>
+      <div class="info">
+        <h1>Simple Budget Tracker</h1>
+        <UserButton />
+      </div>
+      <div class="divider"></div>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+  main {
+    max-width: 720px;
+    display: grid;
+    margin: 0 auto;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & h1 {
+      font-size: 1.5rem;
+      margin: 0.75rem 0;
+    }
+  }
+
+  .divider {
+    height: 1px;
+    inline-size: 100%;
+    background: darkgray;
+  }
+</style>
